@@ -3,6 +3,7 @@ package-lock.json
 node_modules/
 dist/
 
+build/
 dtx-style.sty
 thuthesis.cls
 thuthesis.cfg

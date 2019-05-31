@@ -1,0 +1,24 @@
+\input{regression-test.tex}
+\documentclass[degree=doctor,fontset=fandol]{thuthesis}
+
+\begin{document}
+\START
+\showoutput
+
+\frontmatter
+\thusetup{
+  ctitle          = {电流变机理及应用研究},
+  cdegree         = {工学博士},
+  cdepartment     = {精密仪器与机械学系},
+  cmajor          = {机械工程},
+  cauthor         = {田煜},
+  csupervisor     = {温诗铸教授},
+  cassosupervisor = {孟永钢教授},
+  cdate           = {二〇〇一年十月},
+}
+
+\input{cover.tex}
+
+\clearpage
+\end{document}
+\END

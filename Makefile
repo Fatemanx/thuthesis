@@ -26,7 +26,9 @@ else
 	OPEN = open
 endif
 
-.PHONY: all clean distclean dist thesis viewthesis shuji viewshuji doc viewdoc cls check FORCE_MAKE
+.PHONY: all clean distclean dist thesis viewthesis shuji viewshuji doc viewdoc cls check save test FORCE_MAKE
+
+thesis: $(THESISMAIN).pdf
 
 all: doc thesis shuji
 
@@ -43,8 +45,6 @@ doc: $(PACKAGE).pdf
 viewthesis: thesis
 	$(OPEN) $(THESISMAIN).pdf
 
-thesis: $(THESISMAIN).pdf
-
 viewshuji: shuji
 	$(OPEN) $(SHUJIMAIN).pdf
 
@@ -58,6 +58,29 @@ $(THESISMAIN).pdf: $(CLSFILES) $(BSTFILE) FORCE_MAKE
 
 $(SHUJIMAIN).pdf: $(CLSFILES) FORCE_MAKE
 	latexmk $(LATEXMKOPTS) $(SHUJIMAIN)
+
+save:
+	l3build save --quiet cover-doctor-1-1
+	l3build save --quiet cover-doctor-1-2
+	l3build save --quiet cover-doctor-1-3
+	l3build save --quiet cover-doctor-1-4
+	l3build save --quiet cover-doctor-1-5
+	l3build save --quiet cover-doctor-1-6
+	l3build save --quiet cover-doctor-1-7
+	l3build save --quiet cover-doctor-1-8
+	l3build save --quiet cover-doctor-2-1
+	l3build save --quiet cover-doctor-2-2
+	l3build save --quiet cover-master-1-1
+	l3build save --quiet cover-master-1-2
+	l3build save --quiet cover-master-1-3
+	l3build save --quiet cover-master-1-4
+	l3build save --quiet cover-master-1-5
+	l3build save --quiet cover-master-1-6
+	l3build save --quiet cover-master-2-1
+	l3build save --quiet cover-master-2-2
+
+test:
+	l3build check
 
 clean:
 	latexmk -c $(PACKAGE).dtx $(THESISMAIN) $(SHUJIMAIN)

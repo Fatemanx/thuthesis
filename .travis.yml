@@ -24,9 +24,9 @@ install:
         $INSTALL/install-tl -profile $INSTALL/tl.profile;
     fi
 
-  - tlmgr update --self --all −−no−auto−install;
+  - tlmgr update --self --all −−no−auto−install
 
-  - tlmgr install latexmk
+  - tlmgr install latexmk l3build
     fontname fontspec l3kernel l3packages xetex
     cjk ctex environ ms trimspaces ulem xecjk zhnumber
     fandol tex-gyre xits
@@ -42,3 +42,4 @@ script:
   - make thesis
   - make shuji
   - make doc
+  - make test
